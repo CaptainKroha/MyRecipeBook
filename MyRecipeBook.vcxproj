@@ -132,10 +132,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="get_type.cpp" />
     <ClCompile Include="MyRecipeBook.cpp" />
+    <ClCompile Include="src\visualizer.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\my_dir_for_learning\Libraries\CLib;D:\my_dir_for_learning\projects\MyRecipeBook</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dbclass.h" />
+    <ClInclude Include="get_type.h" />
+    <ClInclude Include="visualizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
