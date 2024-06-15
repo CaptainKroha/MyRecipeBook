@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <list>
 
 
 class Product {
@@ -15,4 +16,14 @@ class ProductWithUnits : public Product {
 
 public:
 	ProductWithUnits(std::string _name, int u_id, double _qty): Product(_name), unit_id(u_id), qty(_qty) { }
+};
+
+class Recipe {
+	int id{  };
+	std::string name{""};
+	std::list<ProductWithUnits> products_list;
+	std::string recipe{""};
+
+	Recipe() { }
+	Recipe(int _id, std::string _name, std::string _recipe):id(_id), name(_name), recipe(_recipe) { }
 };
