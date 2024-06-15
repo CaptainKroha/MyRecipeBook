@@ -10,6 +10,7 @@ const char* main_menu[]{ "Добавить рецепт", "Найти рецеп
 
 int main()
 {
+	system("chcp 1251>nul");
 	std::string path{ path_head };
 	path += "dbfiles/recipe_book_db.db";
 	SQLiteDBConnection* connection;
