@@ -23,7 +23,7 @@ int main()
 		std::cerr << "Ошибка открытия базы данных" << std::endl;
 	}
 	VisualizerBase* visualizer = new ListVisualizer;
-	int res = visualizer->show_list(main_menu, sizeof(main_menu)/sizeof(main_menu[0]));
+	int res = visualizer->show_menu(main_menu, sizeof(main_menu)/sizeof(main_menu[0]));
 	std::cout << res;
 	return 0;
 }
