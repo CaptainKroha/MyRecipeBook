@@ -17,13 +17,13 @@ int main()
 	path += "dbfiles/recipe_book_db.db";
 	SQLiteDBConnection* connection;
 	try {
-		
 		connection = new SQLiteDBConnection(path);
 		connection->open();
 	}
 	catch(int) {
 		std::cerr << "Ошибка открытия базы данных" << std::endl;
 	}
+
 	RecipesManager* manager = new RecipesManager(connection);
 	VisualizerBase* visualizer = new ListVisualizer;
 	int res = visualizer->show_menu(main_menu, sizeof(main_menu)/sizeof(main_menu[0]));

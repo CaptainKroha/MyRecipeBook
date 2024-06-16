@@ -27,6 +27,6 @@ public:
 		int rc = sqlite3_open(path.c_str(), &db);
 		if (rc) throw 1;
 	}
-
+	sqlite3* get_ptr() { return db; }
 	
 };

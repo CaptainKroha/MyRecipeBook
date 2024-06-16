@@ -19,11 +19,11 @@ public:
 };
 
 class Recipe {
-	int id{  };
+	int id{ -1 };
 	std::string name{""};
 	std::list<ProductWithUnits> products_list;
 	std::string recipe{""};
-
+public:
 	Recipe() { }
 	Recipe(int _id, std::string _name, std::string _recipe):id(_id), name(_name), recipe(_recipe) { }
 };
