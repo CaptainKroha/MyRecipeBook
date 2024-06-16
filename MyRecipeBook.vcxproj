@@ -132,7 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="get_type.cpp" />
+    <ClCompile Include="dbclass.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="MyRecipeBook.cpp" />
     <ClCompile Include="src\visualizer.cpp">
@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dbclass.h" />
-    <ClInclude Include="get_type.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="visualizer.h" />

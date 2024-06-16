@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <sqlite3.h>
 #include <string>
@@ -15,14 +17,14 @@ public:
 	virtual void get_recipes_names(std::vector<std::string>& names) = 0;
 };
 
-class SQLiteDBConnection: public DBConnectionBase {
+class SQLiteDBConnection : public DBConnectionBase {
 	sqlite3* db{ nullptr };
 
 public:
 	SQLiteDBConnection(std::string& _path) : DBConnectionBase(_path)
-		{ }
+	{ }
 	~SQLiteDBConnection() {
-		if(db) sqlite3_close(db);
+		if (db) sqlite3_close(db);
 	}
 	virtual void open() override
 	{
@@ -32,5 +34,5 @@ public:
 	sqlite3* get_ptr() { return db; }
 
 	void get_recipes_names(std::vector<std::string>& names) override;
-		
+
 };
