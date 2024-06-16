@@ -25,5 +25,6 @@ class Recipe {
 	std::string recipe{""};
 public:
 	Recipe() { }
+	Recipe(std::string _name, std::string _recipe) : name(_name), recipe(_recipe) { }
 	Recipe(int _id, std::string _name, std::string _recipe):id(_id), name(_name), recipe(_recipe) { }
 };

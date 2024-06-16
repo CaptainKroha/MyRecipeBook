@@ -51,7 +51,7 @@ Recipe* InputManager::get_recipe(DBConnectionBase* db)
 	* если название введено некорректно возращать пользовател€ на это место 
 	*/
 	std::string name = get_recipe_name(db);
-	std::cout << name;
+	std::cout << "¬ведите список продуктов: ";
 	return nullptr;
 }
 
