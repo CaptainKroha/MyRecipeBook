@@ -2,6 +2,7 @@
 #include <sqlite3.h>
 #include <string>
 #include <string.h>
+#include <vector>
 
 class DBConnectionBase {
 protected:
@@ -11,6 +12,7 @@ protected:
 	}
 public:
 	virtual void open() = 0;
+	virtual void get_recipes_names(std::vector<std::string>& names) = 0;
 };
 
 class SQLiteDBConnection: public DBConnectionBase {
@@ -28,5 +30,7 @@ public:
 		if (rc) throw 1;
 	}
 	sqlite3* get_ptr() { return db; }
-	
+
+	void get_recipes_names(std::vector<std::string>& names) override;
+		
 };
