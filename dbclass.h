@@ -14,8 +14,9 @@ protected:
 	}
 public:
 	virtual void open() = 0;
-	virtual void get_recipes_names(std::vector<std::string>& names) = 0;
-	virtual void get_products_names(std::vector<std::string>& names) = 0;
+	virtual void get_names(std::wstring db_name, std::vector<std::wstring>& names) = 0;
+	virtual int get_id_by_name(std::wstring table_name, std::wstring name) = 0;
+	virtual std::wstring get_name_by_id(std::wstring table_name, int id) = 0;
 };
 
 class SQLiteDBConnection : public DBConnectionBase {
@@ -34,7 +35,8 @@ public:
 	}
 	sqlite3* get_ptr() { return db; }
 
-	virtual void get_recipes_names(std::vector<std::string>& names) override;
-	virtual void get_products_names(std::vector<std::string>& names) override;
+	virtual void get_names(std::wstring db_name, std::vector<std::wstring>& names) override;
+	virtual int get_id_by_name(std::wstring table_name, std::wstring name) override;
+	std::wstring get_name_by_id(std::wstring table_name, int id) override;
 
 };
