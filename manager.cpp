@@ -4,6 +4,22 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <list>
+#include "visualizer.h"
+#include <codecvt>
+
+std::string InputManager::wchar_to_utf8(const wchar_t* wstr)
+{
+	std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter;
+	std::string utf_8_str = converter.to_bytes(wstr);
+	return utf_8_str;
+}
+
+std::wstring InputManager::utf8_to_wchar(const char* str) {
+	std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter;
+	std::wstring wstr = converter.from_bytes(str);
+	return wstr;
+}
 
 void RecipesManager::create_recipe()
 {
